@@ -544,7 +544,8 @@ $$('.acc__btn').forEach((btn, i) => {
   const state = { hero: true, form: false, footer: false };
   const sync = () => dockEl.classList.toggle('is-visible', !state.hero && !state.form && !state.footer);
   const watch = (el, key) => new IntersectionObserver(([e]) => { state[key] = e.isIntersecting; sync(); }).observe(el);
-  watch($('.hero__ctas'), 'hero');
+  // Hide the dock until the hero buttons have scrolled up out of view (not while they're still below the fold)
+  new IntersectionObserver(([e]) => { state.hero = e.isIntersecting || e.boundingClientRect.top > 0; sync(); }).observe($('.hero__ctas'));
   watch($('#nominate'), 'form');
   watch($('.footer'), 'footer');
 })();

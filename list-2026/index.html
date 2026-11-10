@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Most Impactful African Bitcoiners of 2026</title>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap">
+<script>document.documentElement.dataset.c = new URLSearchParams(location.search).get('c') || 'paper';</script>
+<style>
+  :root {
+    --bg: #0f0d0a; --fg: #f1e9da; --accent: #c6a15b; --pa: #40362a; --pb: #1b1713;
+    --nav: 64px; --g: clamp(16px, 4vw, 64px); --gap: clamp(10px, 1.2vw, 18px);
+    --serif: "Instrument Serif", Georgia, serif;
+    --mute: color-mix(in oklch, var(--fg) 66%, var(--bg));
+    --line: color-mix(in oklch, var(--fg) 17%, var(--bg));
+    --plate: radial-gradient(120% 85% at 50% 0%, var(--pa), var(--pb));
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  [data-c="pine"]  { --bg: #0f2e2a; --fg: #f3ecdd; --accent: #d8b678; --pa: #33665d; --pb: #173d37; }
+  [data-c="wine"]  { --bg: #2a0e12; --fg: #f5eadd; --accent: #dcae74; --pa: #6e2c33; --pb: #3b151a; }
+  [data-c="paper"] { --bg: #f2ece0; --fg: #1c1711; --accent: #8f5f1f; --pa: #e6dcc8; --pb: #cdbfa5; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; overflow-x: clip; }
+  body { background: var(--bg); color: var(--fg); font-family: Satoshi, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+  /* Stand-in for the bitcoiners.africa header, so the first screen is judged at its real height */
+  .site { height: var(--nav); background: #fff; color: #1e2a3a; display: flex; align-items: center; justify-content: flex-end; gap: 34px; padding: 0 var(--g); font-size: 14px; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; position: relative; }
+  .site img { position: absolute; left: var(--g); top: 10px; height: 44px; }
+
+  /* ── First screen: words on the left, a framed portrait on the right ── */
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 40vw; gap: 4vw; height: calc(100vh - var(--nav) - 84px); height: calc(100svh - var(--nav) - 84px); min-height: 580px; padding: clamp(24px, 5vh, 52px) var(--g) 0; }
+  .left { display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-width: 0; padding-bottom: clamp(4px, 1vh, 12px); }
+
+  h1 { margin: 0; font: 400 min(5.4vw, 11vh)/1.02 var(--serif); letter-spacing: -.012em; }
+  h1 span { display: block; white-space: nowrap; }
+
+  .honor { border-top: 1px solid var(--line); padding-top: clamp(16px, 2.8vh, 28px); display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(20px, 3vw, 44px); align-items: start; }
+  .rank { font: 400 clamp(96px, 18vh, 172px)/.8 var(--serif); letter-spacing: -.02em; color: var(--accent); padding-top: .04em; }
+  .honor h2 { margin: 0; font: 400 clamp(40px, min(4.2vw, 7.6vh), 64px)/1 var(--serif); letter-spacing: -.01em; text-wrap: balance; }
+  .where { margin: 8px 0 14px; font-size: 16px; font-weight: 500; color: var(--mute); }
+  .bio { margin: 0; max-width: 46ch; font-size: 17px; line-height: 1.5; }
+  .home { all: unset; cursor: pointer; display: inline-block; margin-top: 14px; font-size: 15px; font-weight: 500; color: var(--mute); text-decoration: underline; text-underline-offset: 3px; }
+  .home:hover { color: var(--fg); }
+  .home:focus-visible, .row:focus-visible { outline: 1.5px solid currentColor; outline-offset: 3px; }
+  .ln { animation: line .9s var(--ease) both; animation-delay: calc(var(--i) * 70ms + .1s); }
+  @keyframes line { from { opacity: 0; transform: translateY(8px); } }
+
+  .plate { position: relative; display: block; overflow: hidden; border-radius: 4px; background: var(--plate); }
+  .hero { height: 100%; }
+  .hero img { position: absolute; left: var(--x, 50%); top: var(--t, 0); height: var(--h, 100%); z-index: var(--z, 1); max-width: none; translate: -50% 0; opacity: 0; transform: translateY(2%); transition: opacity .6s linear, transform 1.2s var(--ease); }
+  .hero img.on { opacity: 1; transform: none; transition-delay: var(--d, 0s); }
+
+  /* Conference: the three called together */
+  .rows { border-top: 1px solid var(--line); }
+  .row { all: unset; cursor: pointer; display: grid; grid-template-columns: clamp(52px, 5vw, 76px) 1fr; align-items: center; width: 100%; padding: clamp(8px, 1.5vh, 14px) 0; border-bottom: 1px solid var(--line); }
+  .row i { font: 400 clamp(46px, 7.5vh, 66px)/1 var(--serif); font-style: normal; color: var(--accent); }
+  .row b { display: block; font: 400 clamp(28px, min(2.8vw, 5vh), 42px)/1.05 var(--serif); }
+  .row span { font-size: 15px; font-weight: 500; color: var(--mute); }
+
+  /* ── Below: the list so far, same plate for everyone ── */
+  .run { padding: 0 var(--g) clamp(48px, 8vh, 96px); }
+  .runhead { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; height: 84px; padding-top: 30px; }
+  .runhead h2 { margin: 0; font: 400 clamp(28px, 2.6vw, 38px)/1 var(--serif); letter-spacing: -.01em; }
+  .runhead span { font-size: 15px; font-weight: 500; color: var(--mute); }
+  .list { max-width: 1320px; margin: clamp(8px, 2vh, 24px) auto 0; display: grid; gap: clamp(28px, 4.5vh, 52px); }
+  .tier { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: clamp(22px, 3vh, 34px) var(--gap); }
+  .t7 { --cols: 7; --nm: 20px; } .t6 { --cols: 6; --nm: 22px; } .t5 { --cols: 5; --nm: 25px; } .t3 { --cols: 3; --nm: 36px; }
+  .tile { all: unset; display: block; flex: 0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols) - .1px); min-width: 0; }
+  button.tile { cursor: pointer; }
+  .tile .plate { aspect-ratio: 4 / 5; container-type: inline-size; }
+  .tile img { position: absolute; left: 50%; translate: -50% 0; max-width: none; filter: grayscale(1) contrast(1.04); transform-origin: 50% 30%; transition: filter .35s linear, transform .9s var(--ease); }
+  .tile.today img, button.tile:hover img, button.tile:focus-visible img { filter: none; }
+  button.tile:hover img { transform: scale(1.03); }
+  button.tile:focus-visible .plate { outline: 1.5px solid var(--fg); outline-offset: 3px; }
+  .capt { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: .5em; align-items: baseline; padding-top: 10px; font: 400 var(--nm)/1.08 var(--serif); }
+  .capt .no { color: var(--accent); }
+  .capt .org { grid-column: 2; margin-top: 4px; font: 500 13.5px/1.3 Satoshi, system-ui, sans-serif; color: var(--mute); }
+  .t3 .capt { padding-top: 14px; } .t3 .capt .org { font-size: 15px; margin-top: 6px; }
+  .locked .plate { opacity: .5; }
+  .locked .big { position: absolute; inset: 0; display: grid; place-items: center; font: 400 64px/1 var(--serif); font-size: 36cqi; color: color-mix(in oklch, var(--fg) 30%, var(--pb)); }
+  .locked .capt { display: block; font: 500 13.5px/1.3 Satoshi, system-ui, sans-serif; color: var(--mute); min-height: 28px; }
+  .tile.new { opacity: 0; }
+  .tile.new.in { opacity: 1; animation: arrive 1.2s var(--ease) both; animation-delay: calc(var(--seq, 0) * 160ms + .1s); }
+  @keyframes arrive { from { opacity: 0; transform: translateY(14px); } }
+
+  /* Preview control: for reviewing the design only, not part of the final page */
+  .pv { position: fixed; z-index: 50; right: 16px; bottom: 16px; display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 14px; border-radius: 99px; background: #1c1711; color: #f2ece0; font-size: 13px; font-weight: 500; box-shadow: 0 1px 2px #0003, 0 10px 28px -10px #0008; }
+  .pv select { font: inherit; font-weight: 700; color: inherit; background: #ffffff1f; border: 0; border-radius: 99px; padding: 5px 8px; cursor: pointer; }
+  .pv select:focus-visible { outline: 1.5px solid currentColor; outline-offset: 2px; }
+  .pv option { color: #1c1711; background: #fff; }
+  .run { padding-bottom: 120px; }
+  @media (max-width: 1100px) { .t7 { --cols: 4; } .t6, .t5 { --cols: 3; } }
+  @media (max-width: 820px) {
+    :root { --nav: 56px; }
+    .site { justify-content: flex-start; } .site span { display: none; } .site img { top: 9px; height: 38px; left: 16px; }
+    .stage { display: flex; flex-direction: column; height: auto; min-height: 0; gap: 18px; padding-top: 20px; }
+    .left { display: contents; }
+    h1 { order: 0; font-size: min(10.4vw, 44px); } h1 span { white-space: normal; }
+    .hero { order: 1; height: 54svh; flex: none; }
+    #body { order: 2; }
+    .honor { gap: 16px; border-top: 0; padding-top: 0; }
+    .rank { font-size: 92px; } .honor h2 { font-size: 42px; } .bio { font-size: 16.5px; }
+    .runhead { height: auto; padding: 44px 0 4px; }
+  }
+  @media (max-width: 640px) {
+    .t7, .t6 { --cols: 3; --nm: 18px; } .t5 { --cols: 2; --nm: 22px; } .t3 { --cols: 1; --nm: 32px; }
+    .capt { grid-template-columns: minmax(0, 1fr); } .capt .org { grid-column: 1; }
+    .t3 .capt, .t5 .capt { grid-template-columns: auto minmax(0, 1fr); } .t3 .capt .org, .t5 .capt .org { grid-column: 2; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ln, .tile.new.in { animation: none; }
+    .tile.new { opacity: 1; }
+    * { transition-duration: .01ms !important; transition-delay: 0s !important; }
+  }
+</style>
+</head>
+<body>
+<header class="site" inert><img src="../assets/logo-seal.png" alt=""><span>Home</span><span>Learn</span><span>Earn</span><span>Save</span><span>Spend</span><span>Community</span><span>About</span></header>
+<main>
+  <section class="stage" aria-label="Today's name" id="stage">
+    <div class="left">
+      <h1><span>The Most Impactful</span> <span>African Bitcoiners of 2026</span></h1>
+      <div id="body" aria-live="polite"></div>
+    </div>
+    <div class="plate hero" id="hero" aria-hidden="true"></div>
+  </section>
+
+  <section class="run" aria-labelledby="runh">
+    <div class="runhead"><h2 id="runh"></h2><span id="count"></span></div>
+    <div class="list" id="list"></div>
+  </section>
+</main>
+<label class="pv" id="pv" title="Design preview. The people shown are sample content from the 2025 list.">Preview<select id="pvs" aria-label="Preview the page on a day of the run"></select></label>
+
+<script src="data.js"></script>
+<script src="schedule.js"></script>
+<script>
+/* ─────────────────────────────────────────────
+ * STORYBOARD (page load). One slow, quiet entrance, nothing else moves.
+ *     0ms  portrait fades in on its plate and settles by a few pixels (1.2s)
+ *   100ms  rank, name, place, bio arrive 70ms apart
+ * When today's plate in the list scrolls into view:
+ *   100ms  it fades up into place, the only one in colour
+ * Conference: three portraits share the plate, 3, then 2, then 1, 180ms apart.
+ * ───────────────────────────────────────────── */
+const $ = (s) => document.querySelector(s);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// How much of each photo's height the head takes, so close and far crops end up alike
+const HEAD = { 1:.3, 2:.33, 3:.5, 4:.32, 5:.25, 6:.27, 7:.37, 8:.3, 9:.33, 10:.4, 11:.3, 12:.22, 13:.25, 14:.25, 15:.33, 16:.2, 17:.3, 18:.55, 19:.22, 20:.2, 21:.25 };
+const list = PEOPLE.filter(isOut);
+const today = isConference ? 0 : 21 - DAY; // 0 means the top three together
+const person = (r) => PEOPLE[r - 1];
+
+/* The portrait on the first screen */
+const hero = $('#hero'), imgs = {};
+list.forEach((p) => { const im = new Image(); im.alt = ''; im.src = photo(p); hero.append(im); imgs[p.rank] = im; });
+const TRIO = { 2: [15, .7, 1], 3: [86, .7, 2], 1: [50, .95, 3] }; // x %, size, layer
+let cur = null;
+function place(p, im) {
+  const box = hero.getBoundingClientRect(); if (!box.height) return;
+  const a = box.height * .91;
+  const t = cur === 0 && p.rank <= 3 ? TRIO[p.rank] : null;
+  const avail = a * (t ? t[1] : 1), top = box.height - avail;
+  const h = Math.max(avail * .28 / HEAD[p.rank], avail / (1 - p.top));
+  im.style.setProperty('--h', `${h}px`);
+  im.style.setProperty('--t', `${top - p.top * h}px`);
+  if (t) { im.style.setProperty('--x', `${t[0]}%`); im.style.setProperty('--z', t[2]); } else { im.style.removeProperty('--x'); im.style.removeProperty('--z'); }
+}
+const placeAll = () => list.forEach((p) => place(p, imgs[p.rank]));
+
+const single = (p) => `<div class="honor">
+    <div class="rank ln" style="--i:0" aria-hidden="true">${p.rank}</div>
+    <div>
+      <h2 class="ln" style="--i:1"><span class="vh">Number ${p.rank}: </span>${p.name}</h2>
+      <p class="where ln" style="--i:2">${p.org}, ${p.country}</p>
+      <p class="bio ln" style="--i:3">${p.bio}</p>
+      ${p.rank !== today ? `<button class="home ln" style="--i:4" type="button" data-go="${today}">${isConference ? 'Back to the top three' : 'Back to today'}</button>` : ''}
+    </div>
+  </div>`;
+const trio = () => `<div class="rows">${[1, 2, 3].map((r, i) => { const p = person(r); return `<button class="row ln" style="--i:${i}" type="button" data-go="${r}"><i>${r}</i><div><b>${p.name}</b><span>${p.org}, ${p.country}</span></div></button>`; }).join('')}</div>`;
+function show(r, first) {
+  if (r === cur) return; cur = r;
+  Object.values(imgs).forEach((im) => im.classList.remove('on'));
+  const on = r === 0 ? [3, 2, 1] : [r];
+  on.forEach((k, i) => { place(person(k), imgs[k]); imgs[k].style.setProperty('--d', `${i * .18}s`); imgs[k].classList.add('on'); });
+  $('#body').innerHTML = r === 0 ? trio() : single(person(r));
+  if (!first) history.replaceState(null, '', r === today ? location.pathname + location.search : `${location.search}#${r}`);
+}
+
+/* The list: 21 first while the run is on, 1 first once everyone is out. Plates grow toward the top three. */
+const range = (a, b) => Array.from({ length: a - b + 1 }, (_, i) => a - i);
+const run = [['t7', range(21, 15)], ['t6', range(14, 9)], ['t5', range(8, 4)], ['t3', [3, 2, 1]]];
+const tiers = isConference ? run.map(([c, r]) => [c, [...r].reverse()]).reverse() : run;
+const nextUp = isConference ? [] : DAY >= LAST_DAY - 1 ? [3, 2, 1] : [21 - DAY - 1];
+const tile = (rank) => {
+  const p = person(rank);
+  if (!isOut(p)) return `<div class="tile locked" title="${whenOut(rank)}"><span class="plate"><span class="big" aria-hidden="true">${rank}</span></span><span class="capt"><span class="vh">Number ${rank}, not yet announced. </span>${nextUp.includes(rank) ? whenOut(rank) : ''}</span></div>`;
+  const h = Math.max(40 / HEAD[rank], 85 / (1 - p.top));
+  return `<button class="tile${isNew(p) ? ' new today' : ''}" type="button" data-rank="${rank}" style="--seq:${isConference ? rank - 1 : 0}" aria-label="Number ${rank}, ${p.name}, ${p.org}, ${p.country}. Read about them">
+    <span class="plate"><img src="${photo(p)}" alt="" style="height:${h}%;top:${15 - p.top * h}%"></span>
+    <span class="capt"><span class="no">${rank}</span><span>${p.name}</span><span class="org">${p.org}, ${p.country}</span></span>
+  </button>`;
+};
+$('#runh').textContent = isConference ? 'The full list' : 'The list so far';
+$('#count').textContent = isConference ? 'All 21' : `${OUT_COUNT} of 21`;
+const listEl = $('#list');
+listEl.innerHTML = tiers.map(([c, ranks]) => `<div class="tier ${c}">${ranks.map(tile).join('')}</div>`).join('');
+
+listEl.addEventListener('click', (e) => { const b = e.target.closest('button.tile'); if (b) { show(+b.dataset.rank); scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); } });
+$('#body').addEventListener('click', (e) => { const b = e.target.closest('[data-go]'); if (b) show(+b.dataset.go); });
+listEl.addEventListener('animationend', (e) => { const b = e.target.closest('.tile.new'); if (b) b.classList.remove('new', 'in'); });
+const io = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }), { threshold: .3 });
+listEl.querySelectorAll('.tile.new').forEach((t) => io.observe(t));
+
+/* Preview control */
+const pvs = $('#pvs');
+pvs.innerHTML = DAYS.map((d, i) => `<option value="${i}">${d.label}: ${i + 1} ${i ? 'names' : 'name'}</option>`).join('') + `<option value="${LAST_DAY}">Conference: all 21</option>`;
+pvs.value = DAY;
+pvs.onchange = () => { const u = new URLSearchParams(location.search); u.set('day', pvs.value); location.href = `${location.pathname}?${u}`; };
+if (new URLSearchParams(location.search).has('clean')) $('#pv').remove();
+
+/* Start: content is on screen immediately */
+const hash = +location.hash.slice(1);
+placeAll(); void hero.offsetWidth;
+show(hash && list.some((p) => p.rank === hash) ? hash : today, true);
+addEventListener('resize', placeAll);
+</script>
+</body>
+</html>
